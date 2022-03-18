@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Taken from https://gist.github.com/CapitanRetraso/56a00a70083457c257dad029622eae9f
 import binascii
 import functools
 import json
@@ -28,7 +29,7 @@ def readFromPosition(offset, size, value_type):
 
 # Calculates the amount of null bytes that need to be added
 def calculateSeparator(end):
-    last_part_offset = int(hex(int(end))[-1], 16)  # This is retarded
+    last_part_offset = int(hex(int(end))[-1], 16)
 
     # Check the last digit of the hex value to calculate the amount that needs to be filled for the next table to start
     if last_part_offset < 0x4:
