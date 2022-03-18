@@ -1,0 +1,7 @@
+PAR_TOOL = "ParTool.exe"
+EXPORTER = "20070319exporter-win.exe"
+EXPORTER_CP932 = "20070319exporterCP932-win.exe"
+IMPORTER = "20070319importer-win.exe"
+IMPORTER_CP932 = "20070319importerCP932.exe"
+TMP_DIR = "tmp"
+OUT_DIR = "out"

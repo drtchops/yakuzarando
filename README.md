@@ -10,12 +10,15 @@ Place the `.exe`s for par tool and the bin editor in this folder (beside `main.p
 
 ## Usage
 
-Edit `config.ini` to specify your Yakuza 5 directory, then just run `python main.py`. The rando will create a backup of the changed `.par` file in your game directory.
+Edit `config.ini` to specify your Yakuza 5/0 directory, then just run `python main.py`. The rando will create a backup of the changed files in your game directory.
 
 ```
-usage: main.py [-h] [--revert] [--seed SEED]
+usage: main.py [-h] [--revert] [--seed SEED] {5,0}
 
 Randomize a yakuza game
+
+positional arguments:
+  {5,0}                 specify which game to randomize
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -27,8 +30,11 @@ optional arguments:
 
 ### Games
 
-- Yakuza 5
+- Yakuza 0
+- Yakuza 5 (Only player models)
 
 ### Features
 
 - Player character models
+- NPC models
+- Player movesets
