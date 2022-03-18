@@ -25,12 +25,12 @@ class Randomizer:
 
         with open("player_models.txt") as f:
             self.player_models = [
-                m for m in f.readlines() if m and not m.startswith("#")
+                m.strip() for m in f.readlines() if m and not m.startswith("#")
             ]
 
         with open("enemy_models.txt") as f:
             self.enemy_models = [
-                m for m in f.readlines() if m and not m.startswith("#")
+                m.strip() for m in f.readlines() if m and not m.startswith("#")
             ]
 
         self.changed_models: Dict[str, str] = {}
@@ -154,7 +154,7 @@ class Randomizer:
 
     def randomize(self):
         self.update_boot_par("boot_en")
-        # self.update_wdr_par('wdr_par_en')
+        # self.update_wdr_par("wdr_par_en")
 
     def revert(self):
         y5_dir = self.config["General"]["Yakuza5Path"]
