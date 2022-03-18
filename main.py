@@ -1,3 +1,4 @@
+import argparse
 import configparser
 import json
 import os
@@ -5,6 +6,8 @@ import random
 import shutil
 import subprocess
 import sys
+import time
+from pydoc import describe
 from typing import Any, Dict
 
 from dispose_string import forFile
@@ -173,12 +176,23 @@ class Randomizer:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Randomize a yakuza game")
+    parser.add_argument(
+        "--revert",
+        "-r",
+        action="store_true",
+        help="restore original backed up files",
+    )
+    parser.add_argument("--seed", "-s", help="specify a seed")
+    args = parser.parse_args()
+
     rando = Randomizer()
 
-    args = sys.argv[1:]
-    if args and args[0] == "revert":
+    if args.revert:
         rando.revert()
         return
+    if args.seed:
+        random.seed(args.seed)
 
     rando.randomize()
 
